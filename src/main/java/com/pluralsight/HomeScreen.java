@@ -164,21 +164,65 @@ public class HomeScreen {
             }
         }
     }
-    public static void showMonthToDate(){ //   this report show from start of current month to today
+    private static void showMonthToDate(){ //   this report show from start of current month to today
+        System.out.println("Month-To-Date Transactions:");
+        LocalDate today = LocalDate.now();
 
+        for (Transaction t : transactions) {
+            if (t.getDate().getYear() == today.getYear() &&
+                    t.getDate().getMonth() == today.getMonth()) {
+                System.out.println(t);
+            }
+        }
     }
-    public static void showPreviousMonth(){  // this report is for the previous calendar month
+    private static void showPreviousMonth(){  // this report is for the previous calendar month
+        System.out.println("Previous Month Transactions:");
+        LocalDate today = LocalDate.now();
+        LocalDate lastMonth = today.minusMonths(1);
 
+        for (Transaction t : transactions) {
+            if (t.getDate().getYear() == lastMonth.getYear() &&
+                    t.getDate().getMonth() == lastMonth.getMonth()) {
+                System.out.println(t);
+            }
+        }
     }
-    public static void showYearToDate(){   // this Show report from January 1st to today
 
-    }
-    public static void showPreviousYear(){  // this report shows the entire previous year
+    private static void showYearToDate(){  //this Show report from January 1st to today
+        System.out.println("Year-To-Date Transactions:");
+        int currentYear = LocalDate.now().getYear();
 
+        for (Transaction t : transactions) {
+            if (t.getDate().getYear() == currentYear) {
+                System.out.println(t);
+            }
+        }
     }
-    public static void searchByVendor(){  // this method search vendor by their given name
+    private static void showPreviousYear(){  // this report shows the entire previous year
+        System.out.println("Previous Year Transactions:");
+        int lastYear = LocalDate.now().getYear() - 1;
 
+        for (Transaction t : transactions) {
+            if (t.getDate().getYear() == lastYear) {
+                System.out.println(t);
+            }
+        }
     }
+    private static void searchByVendor(){   // this method search vendor by their given name
+       String vendor = ConsoleHelper.promptForString("Enter vendor name to search"); // this line of code print the header showing the vendor name for which transactions will be displayed
+        System.out.println("Transactions for vendor: + vendor");
+
+        boolean isfind = false;
+        for(Transaction t: transactions){
+            if (t.getVendor().equalsIgnoreCase(vendor)) {
+                System.out.println(t);
+                isfind = true;
+                }
+            }
+            if(!isfind){ // not find for the vendor
+                System.out.println("Can't find Vendor");
+            }
+        }
     public static ArrayList<Transaction> getTransactionsFromFile() {  // This method reads transactions from the CSV file
         ArrayList<Transaction> transactions = new ArrayList<>();
 
