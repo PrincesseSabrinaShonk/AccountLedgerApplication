@@ -36,7 +36,7 @@ public static LocalDate promptForDate(String prompt){
             return LocalDate.parse(dateAsString);
         }
         catch (Exception ex){
-            System.out.println("Invalid Entry, please enter a valid date (HH:MM or HH:MM:SS");
+            System.out.println("Invalid Entry, please enter a valid date (YYYY-MM-DD)");
         }
     }
 }

@@ -19,9 +19,9 @@ public class HomeScreen {
                 """;
         while (true) {  // As long as its true keep showing the menu until the user exit out
             System.out.println(mainMenu);
-            String command = ConsoleHelper.promptForString("Enter your command (D, P, L, X)").toUpperCase();
+            String input = ConsoleHelper.promptForString("Enter your INPUT (D, P, L, X)").toUpperCase();
 
-            switch (command) {
+            switch (input) {
                 case "D":
                     addDeposit();
                     break;
@@ -81,9 +81,9 @@ public class HomeScreen {
                 """;
         while (true) { // it said while true keep showing the ledger until the user return to the main menu
             System.out.println(ledgerMenu);
-            String command = ConsoleHelper.promptForString("Enter your command (A, D, P, R, H)").toUpperCase();
+            String input = ConsoleHelper.promptForString("Enter your Input (A, D, P, R, H)").toUpperCase();
 
-            switch (command) {
+            switch (input) {
                 case "A":
                     displayAllEntries();
                     break;
@@ -130,6 +130,30 @@ public class HomeScreen {
     }
     // This method shows future report
     private static void showReports() {
+        String reportMenu =  """
+            1) Month To Date
+            2) Previous Month
+            3) Year To Date
+            4) Previous Year
+            5) Search by Vendor
+            0) Back
+            """;
+        while (true) {
+            System.out.println(reportMenu);
+            String choice = ConsoleHelper.promptForString("Choose a report option");
+
+            switch (choice) {
+                case "1": showMonthToDate(); break;
+                case "2": showPreviousMonth(); break;
+                case "3": showYearToDate(); break;
+                case "4": showPreviousYear(); break;
+                case "5": searchByVendor(); break;
+                case "0": return;
+                default: System.out.println("Invalid option.");
+            }
+        }
+    }
+
         System.out.println("Reports feature coming soon...");
     }
 
