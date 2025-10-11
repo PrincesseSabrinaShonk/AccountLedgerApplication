@@ -138,25 +138,47 @@ public class HomeScreen {
             5) Search by Vendor
             0) Back
             """;
-        while (true) {
+        while(true){ //  Loop continuously until the user enters 0 to exit
             System.out.println(reportMenu);
-            String choice = ConsoleHelper.promptForString("Choose a report option");
-
-            switch (choice) {
-                case "1": showMonthToDate(); break;
-                case "2": showPreviousMonth(); break;
-                case "3": showYearToDate(); break;
-                case "4": showPreviousYear(); break;
-                case "5": searchByVendor(); break;
-                case "0": return;
-                default: System.out.println("Invalid option.");
+            String input= ConsoleHelper.promptForString("Enter your INPUT (1, 2, 3, 4, 5, 0)");
+            switch (input) {
+                case "1":
+                    showMonthToDate();
+                    break;
+                case "2":
+                    showPreviousMonth();
+                    break;
+                case "3":
+                    showYearToDate();
+                    break;
+                case "4":
+                    showPreviousYear();
+                    break;
+                case "5":
+                    searchByVendor();
+                    break;
+                case "0":
+                    return; //Go back to Ledger menu
+                default:
+                    System.out.println("Invalid option. Please try again.");
             }
         }
     }
+    public static void showMonthToDate(){ //   this report show from start of current month to today
 
-        System.out.println("Reports feature coming soon...");
     }
+    public static void showPreviousMonth(){  // this report is for the previous calendar month
 
+    }
+    public static void showYearToDate(){   // this Show report from January 1st to today
+
+    }
+    public static void showPreviousYear(){  // this report shows the entire previous year
+
+    }
+    public static void searchByVendor(){  // this method search vendor by their given name
+
+    }
     public static ArrayList<Transaction> getTransactionsFromFile() {  // This method reads transactions from the CSV file
         ArrayList<Transaction> transactions = new ArrayList<>();
 
