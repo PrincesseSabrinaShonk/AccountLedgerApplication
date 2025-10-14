@@ -40,10 +40,14 @@ public class Transaction {
             return amount;
         }
 
-        // Check if it's a deposit
+        //Returns true if this transaction is a deposit amount > 0
         public boolean isDeposit() {
             return amount > 0;
         }
+        // Returns true if this transaction is a payment amount < 0
+        public boolean isPayment(){
+            return amount <0;
+    }
 
     public void setDate(LocalDate date) {
         this.date = date;
