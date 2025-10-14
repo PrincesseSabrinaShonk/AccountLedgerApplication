@@ -16,8 +16,8 @@ public class ConsoleHelper {
             while (true) {
                 try {
                     System.out.print(prompt + ": ");
-                    String input = scanner.nextLine();
-                    return Double.parseDouble(input); // Convert text to double
+                    String input = scanner.nextLine(); // Read input as a string
+                    return Double.parseDouble(input); // Convert String to double
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid input! Please enter a number");
                 }
@@ -27,7 +27,7 @@ public class ConsoleHelper {
 public static String promptForString(String prompt) {
     System.out.print(prompt + ": ");
     return scanner.nextLine();
-}
+} //Prompts the user for a string input
 public static LocalDate promptForDate(String prompt){
     while(true){
         try {
