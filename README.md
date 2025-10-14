@@ -58,6 +58,12 @@ Each new transaction (deposit or payment) is appended to the file automatically.
 - Reads and writes data to `transactions.csv`
 
 - <img width="623" height="275" alt="image" src="https://github.com/user-attachments/assets/c7bf13d9-a753-4d1a-b38e-191174116d57" />
+<img width="1798" height="754" alt="image" src="https://github.com/user-attachments/assets/2ca09d3e-1f16-41ea-8c79-61830fee3fd9" />
+<img width="1018" height="890" alt="image" src="https://github.com/user-attachments/assets/8a5fac38-1808-45e1-aef1-c039b10c1134" />
+<img width="887" height="808" alt="image" src="https://github.com/user-attachments/assets/34931389-6e33-42ea-9276-2e418f969b65" />
+
+
+
 
 
 
