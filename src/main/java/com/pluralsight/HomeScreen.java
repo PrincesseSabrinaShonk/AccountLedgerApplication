@@ -12,10 +12,10 @@ public class HomeScreen {
     // this line create a list of transaction by reading them from the file
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the Accounting Ledger Application!");
+        System.out.println("------Welcome to the Accounting Ledger App-------");
         //--- Main Menu Methods --
         String mainMenu = """       
-                What do you want to do?
+                What do you want to do Today?
                 D) Add Deposit
                 P) Make Payment (Debit)
                 L) Ledger
@@ -64,7 +64,6 @@ public class HomeScreen {
         saveTransaction(newTransaction);
         System.out.println("Deposit added successfully!");
     }
-
     // --- Make Payment ---
     /**
      * Prompts the user for payment information and saves it.
@@ -84,7 +83,6 @@ public class HomeScreen {
         saveTransaction(newTransaction);      // Save to CSV
         System.out.println("Payment recorded successfully!");
     }
-
     // --- Read from CSV ---
     /**
      * // This method reads transactions from the CSV file and return them to the list
@@ -114,7 +112,6 @@ public class HomeScreen {
         } catch (Exception e) {
             System.out.println("There was an error reading the transactions file.");   //  to catch an exception mean to show error if something goes wrong while reading the file
         }
-
         return transactions;
     }
 
