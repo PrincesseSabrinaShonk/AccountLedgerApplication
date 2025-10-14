@@ -240,7 +240,11 @@ public class HomeScreen {
             }
         }
     }
-    private static void searchByVendor(){   // this method search vendor by their given name
+
+    /**
+     *  // this method search vendor by their given name
+     */
+    private static void searchByVendor(){
        String vendor = ConsoleHelper.promptForString("Enter vendor name to search"); // this line of code print the header showing the vendor name for which transactions will be displayed
         System.out.println("Transactions for vendor: + vendor");
 
@@ -255,7 +259,11 @@ public class HomeScreen {
                 System.out.println("Can't find Vendor");
             }
         }
-    public static ArrayList<Transaction> getTransactionsFromFile() {  // This method reads transactions from the CSV file and return them to the list
+
+    /**
+     * // This method reads transactions from the CSV file and return them to the list
+     */
+    public static ArrayList<Transaction> getTransactionsFromFile() {
         ArrayList<Transaction> transactions = new ArrayList<>();  // Create a list to store all the transactions read from the file
 
         try (FileReader fileReader = new FileReader("transactions.csv");   //Use try-with-resources to automatically close the file after reading
@@ -284,7 +292,10 @@ public class HomeScreen {
         return transactions;   // Return the list of transactions
     }
 
-    private static void saveTransaction(Transaction t) {  // This line of code adds a new transaction to the end of the CSV file,
+    /**
+     *  This line of code adds a new transaction to the end of the CSV file,
+     */
+    private static void saveTransaction(Transaction t) {
         try (FileWriter fileWriter = new FileWriter("transactions.csv", true);
              PrintWriter printWriter = new PrintWriter(fileWriter)) {
             printWriter.printf("%s|%s|%s|%s|%.2f%n",
@@ -302,7 +313,10 @@ public class HomeScreen {
         );
     }
 
-    private static void displayTransactions(ArrayList<Transaction> list) {   // This method displays a list of transactions
+    /**
+     *  // This method displays a list of transactions
+     */
+    private static void displayTransactions(ArrayList<Transaction> list) {
         for (Transaction t : list) {
             System.out.println(t);
         }
