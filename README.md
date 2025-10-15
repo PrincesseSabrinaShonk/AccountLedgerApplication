@@ -63,13 +63,6 @@ Each new transaction (deposit or payment) is appended to the file automatically.
 <img width="887" height="808" alt="image" src="https://github.com/user-attachments/assets/34931389-6e33-42ea-9276-2e418f969b65" />
 
 
-
-
-
-
-
-
-
 ### Transaction
 - Represents each transaction with:
   - Date

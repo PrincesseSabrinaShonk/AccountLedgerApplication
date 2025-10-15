@@ -56,13 +56,18 @@ public class LedgerScreen {
         sortTransactionsByNewest(transactions);
         displayTransactions(transactions);
     }
+
+    /**
+     * This method calculates and returns the current balance based on all transactions
+     */
     private double calculateBalance() {
-        double balance = 0;
-        for (Transaction t : transactions) {
+        double balance = 0;  // Start with a balance of 0
+        for (Transaction t : transactions) {  //Loop through each transaction in the list
             balance += t.getAmount();
         }
-        return balance;
+        return balance; //Return the final calculated balance
     }
+
     /**
      * filters transactions where amount is < 0
      */
@@ -75,21 +80,25 @@ public class LedgerScreen {
         sortTransactionsByNewest(deposits);
         displayTransactions(deposits);
     }
+
     /**
      * filters transactions where amount is > 0
      */
     private void displayPaymentsOnly() {
         System.out.println("Payments:");
-        ArrayList<Transaction> payments = new ArrayList<>();
-        for (Transaction t : transactions) {
-            if (t.getAmount() < 0) payments.add(t);
+
+        ArrayList<Transaction> payments = new ArrayList<>();  // Create a new list to store only payment transactions
+        for (Transaction t : transactions) {   // Loop through all transactions
+            if (t.getAmount() < 0) payments.add(t);  // If the transaction amount is negative
         }
         sortTransactionsByNewest(payments);
         displayTransactions(payments);
     }
 
-    // --- Reports Menu ---
-    // This method shows future report
+    /**
+     * --- Reports Menu ---
+     */
+
     private void showReports() {
         String reportMenu = """
             1) Month To Date
@@ -104,7 +113,7 @@ public class LedgerScreen {
             System.out.println(reportMenu);
             String input = ConsoleHelper.promptForString("Enter your INPUT (1, 2, 3, 4, 5, 0)");
             switch (input) {
-                case "1":   // Show transactions from the current mont
+                case "1":   // Show transactions from the current month
                     showMonthToDate();
                     break;
                 case "2":  // Show transactions from the previous month
@@ -190,8 +199,8 @@ public class LedgerScreen {
         String vendor = ConsoleHelper.promptForString("Enter vendor name to search");
         System.out.println("Transactions for vendor: " + vendor);
 
-        boolean found = false;
-        for (Transaction t : transactions) {
+        boolean found = false;      //track if any matching transactions are found
+        for (Transaction t : transactions) {  // Check if the transaction's vendor matches the search term
             if (t.getVendor().equalsIgnoreCase(vendor)) {
                 System.out.println(t);
                 found = true;
@@ -202,15 +211,17 @@ public class LedgerScreen {
         }
     }
 
-    // --- Helper Methods ---
+    /**
+     * This method sorts a list of transactions so that the most recent ones appear first, based on date and time
+     */
     private void sortTransactionsByNewest(ArrayList<Transaction> list) {
-        list.sort(Comparator
+        list.sort(Comparator      //is a tool in Java used to define how objects should be compared during sorting.
                 .comparing(Transaction::getDate)
-                .thenComparing(Transaction::getTime)
+                .thenComparing(Transaction::getTime)  //If two transactions have the same date, this line says to compare them by time
                 .reversed());
     }
     /**
-     *  // This method displays a list of transactions
+     *  // This method displays a list of transactions and print each one of them to the console
      */
     private void displayTransactions(ArrayList<Transaction> list) {
         for (Transaction t : list) {

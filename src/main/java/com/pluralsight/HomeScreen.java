@@ -28,15 +28,15 @@ public class HomeScreen {
 
             switch (input) {
                 case "D":
-                    addDeposit();
+                    addDeposit();  // Call method to add a deposit t
                     break;
                 case "P":
                     makePayment();
                     break;
                 case "L":
-                    // New: Create a Ledger object and call its menu
+                    //  Create a new LedgerScreen object, passing the current transactions list
                     LedgerScreen ledger = new LedgerScreen(transactions);
-                    ledger.displayLedger();
+                    ledger.displayLedger();  //Call the method to display the ledger
                     break;
                 case "X":
                     System.out.println("Exiting application.");
@@ -64,7 +64,6 @@ public class HomeScreen {
         saveTransaction(newTransaction);
         System.out.println("Deposit added successfully!");
     }
-    // --- Make Payment ---
     /**
      * Prompts the user for payment information and saves it.
      */
@@ -76,16 +75,15 @@ public class HomeScreen {
         String vendor = ConsoleHelper.promptForString("Enter vendor");
         double amount = ConsoleHelper.promptForDouble("Enter payment amount");
 
-        amount = -Math.abs(amount); // Ensure it’s negative
+        amount = -Math.abs(amount); // This line of code makes sure that the amount is always negative, no matter what the user enters
 
         Transaction newTransaction = new Transaction(date, time, description, vendor, amount); // Create a new Transaction object using the provided details
-        transactions.add(newTransaction);   // Add to list
-        saveTransaction(newTransaction);      // Save to CSV
+        transactions.add(newTransaction);   // Add the new transaction to the list of transactions
+        saveTransaction(newTransaction);      //  Save the new transaction to the CSV file
         System.out.println("Payment recorded successfully!");
     }
-    // --- Read from CSV ---
     /**
-     * // This method reads transactions from the CSV file and return them to the list
+     * This method reads transactions from the CSV file and return them to the list
      */
     public static ArrayList<Transaction> getTransactionsFromFile() {
         ArrayList<Transaction> transactions = new ArrayList<>();  // Create a list to store all the transactions read from the file
@@ -115,7 +113,6 @@ public class HomeScreen {
         return transactions;
     }
 
-    // --- Save to CSV ---
     /**
      *  This line of code adds a new transaction to the end of the CSV file,
      */
@@ -129,8 +126,6 @@ public class HomeScreen {
             System.out.println("Error saving transaction to file.");   // If anything goes wrong while writing, display an error message
         }
         // Write the transaction data to the CSV file in a pipe-separated format
-        // %.2f ensures the amount is written with two decimal places
-        // %n adds a new line at the end of each transaction
     }
 }
 
