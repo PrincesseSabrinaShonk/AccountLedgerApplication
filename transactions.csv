@@ -13,7 +13,6 @@ date|time|description|vendor|amount
 2025-06-30|17:11:55|Monthly Paycheck|NextGenTech|1580.00
 2024-05-02|09:42:28|Food Truck Lunch|TacoPlanet|-21.50
 2023-05-02|10:13:43|Cold Brew Coffee|BrewBrothers|-6.75
-2024-10-02|10:19:09|Sold Handmade Jewelry|MySideHustle|375.95
 2024-02-14|02:12:14|FrogLegs|Tacobell|-15.00
 2024-02-15|00:12:14|water|Walmart|-12.00
 2004-12-24|00:00|flower|target|-20.00
@@ -23,4 +22,6 @@ date|time|description|vendor|amount
 2025-10-14|00:52:15|paycheck|Bofa|150.00
 2025-10-02|00:21:14|Taco Tuesday|Tacobell|-14.00
 2025-04-05|00:15:52|Wellsfargo|Bank|52.00
-2025-04-09|00:23:52|Chocolate|Walmart|-15.00
+2025-01-09|00:23:52|Chocolate|Walmart|-15.00
+2025-05-15|00:12:52|Payments|Bank of america|500.00
+2025-10-15|00:25:25|cases|target|-15.00

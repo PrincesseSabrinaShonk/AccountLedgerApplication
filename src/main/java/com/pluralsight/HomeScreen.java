@@ -35,7 +35,7 @@ public class HomeScreen {
                     break;
                 case "L":
                     // New: Create a Ledger object and call its menu
-                    Ledger ledger = new Ledger(transactions);
+                    LedgerScreen ledger = new LedgerScreen(transactions);
                     ledger.displayLedger();
                     break;
                 case "X":
@@ -78,7 +78,7 @@ public class HomeScreen {
 
         amount = -Math.abs(amount); // Ensure it’s negative
 
-        Transaction newTransaction = new Transaction(date, time, description, vendor, amount);
+        Transaction newTransaction = new Transaction(date, time, description, vendor, amount); // Create a new Transaction object using the provided details
         transactions.add(newTransaction);   // Add to list
         saveTransaction(newTransaction);      // Save to CSV
         System.out.println("Payment recorded successfully!");

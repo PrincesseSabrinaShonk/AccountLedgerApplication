@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Ledger {
+public class LedgerScreen {
     private ArrayList<Transaction> transactions;
 
     // Constructor to receive the transactions list from HomeScreen
-    public Ledger(ArrayList<Transaction> transactions) {
+    public LedgerScreen(ArrayList<Transaction> transactions) {
         this.transactions = transactions;
     }
 
@@ -152,7 +152,7 @@ public class Ledger {
         for (Transaction t : transactions) {                           // Loop through every transaction in the list
             if (t.getDate().getYear() == lastMonth.getYear() &&
                     t.getDate().getMonth() == lastMonth.getMonth()) {
-                System.out.println(t);                                        // Print the transaction details if it matches the previous mont
+                System.out.println(t);                                        // Print the transaction details if it matches the previous month
             }
         }
     }
