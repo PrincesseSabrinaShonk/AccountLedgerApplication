@@ -103,7 +103,6 @@ public class HomeScreen {
                 String description = parts[2];
                 String vendor = parts[3];
                 double amount = Double.parseDouble(parts[4]);
-
                 Transaction t = new Transaction(date, time, description, vendor, amount);    // Create a new Transaction object with the parsed data
                 transactions.add(t);
             }
@@ -119,7 +118,6 @@ public class HomeScreen {
     private static void saveTransaction(Transaction t) {
         try (FileWriter fileWriter = new FileWriter("transactions.csv", true);
              PrintWriter printWriter = new PrintWriter(fileWriter)) {
-
             printWriter.printf("%s|%s|%s|%s|%.2f%n",
                     t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
         } catch (Exception e) {
