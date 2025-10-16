@@ -31,7 +31,7 @@ public static String promptForString(String prompt) {
 public static LocalDate promptForDate(String prompt){
     while(true){
         try {
-            System.out.println(prompt +  ": ");
+            System.out.print(prompt +  ": ");
             String dateAsString = scanner.nextLine();
             return LocalDate.parse(dateAsString);
         }
@@ -43,7 +43,7 @@ public static LocalDate promptForDate(String prompt){
 public static LocalTime promptForTime(String prompt){
     while(true){
         try {
-            System.out.println(prompt + ": ");
+            System.out.print(prompt + ": ");
             String timeAsString = scanner.nextLine();
             return LocalTime.parse(timeAsString);
         } catch (Exception ex) {
