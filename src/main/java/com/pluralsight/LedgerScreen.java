@@ -215,9 +215,9 @@ public class LedgerScreen {
      * This method sorts a list of transactions so that the most recent ones appear first, based on date and time
      */
     private void sortTransactionsByNewest(ArrayList<Transaction> list) {
-        list.sort(Comparator      //is a tool in Java used to define how objects should be compared during sorting.
-                .comparing(Transaction::getDate)
-                .thenComparing(Transaction::getTime)  //If two transactions have the same date, this line says to compare them by time
+        list.sort(Comparator                  // First, compare by date
+                .comparing(Transaction::getDate)   // If dates are the same, compare by time
+                .thenComparing(Transaction::getTime)   // Reverse the order so newest comes first
                 .reversed());
     }
     /**
