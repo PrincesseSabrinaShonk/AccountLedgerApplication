@@ -34,7 +34,7 @@ public class HomeScreen {
                     makePayment();
                     break;
                 case "L":
-                    //  Create a new LedgerScreen object, passing the current transactions list
+                    // Call the method that displays the ledger screen to the user
                     LedgerScreen ledger = new LedgerScreen(transactions);
                     ledger.displayLedger();  //Call the method to display the ledger
                     break;
